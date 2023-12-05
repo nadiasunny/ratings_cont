@@ -22,11 +22,12 @@ def process_scores(filename):
 
         scores[words[0]] = words[1]
         
-    sorted_scores = sorted(scores)
-    for restaurant in sorted_scores:
-        print(f"{restaurant} score is {scores[restaurant]}")
-
-
+    # # sorted_scores = sorted(scores)
+    # for restaurant in sorted_scores:
+    #     print(f"{restaurant} score is {scores[restaurant]}")
+    print(scores.items())
+    print(sorted(scores))
+    
 print(process_scores('scores.txt'))
 
 print(f"{('lot', 'of', 'sheece',)[1]} llo")
