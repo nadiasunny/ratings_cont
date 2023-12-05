@@ -19,11 +19,17 @@ def process_scores(filename):
     for line in data:
         line = line.rstrip()
         words = line.split(":")
-        
-        
+
         scores[words[0]] = words[1]
         
-    print(scores)
+    sorted_scores = sorted(scores)
+    for restaurant in sorted_scores:
+        print(f"{restaurant} score is {scores[restaurant]}")
 
-process_scores('scores.txt')
 
+print(process_scores('scores.txt'))
+
+print(f"{('lot', 'of', 'sheece',)[1]} llo")
+# print_sorted_scores(score):
+    
+    
