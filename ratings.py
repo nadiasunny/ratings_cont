@@ -27,7 +27,12 @@ def process_scores(filename):
     #     print(f"{restaurant} score is {scores[restaurant]}")
     print(scores.items())
     print(sorted(scores))
-    
+    for res, rating in sorted(scores.items()):
+        print(f"{res}'s rating is {rating}.")
+              
+
+
+
 print(process_scores('scores.txt'))
 
 print(f"{('lot', 'of', 'sheece',)[1]} llo")
