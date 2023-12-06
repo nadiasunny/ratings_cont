@@ -14,8 +14,14 @@
 def process_scores(filename):
 
     data = open(filename)
-    scores = {}
 
+    user_restaurant = input('What restaurant are you rating? ')
+    user_rating = input(f'What is your rating for {user_restaurant}: ')
+
+    while int(user_rating) > 5 or int(user_rating) < 1:
+        user_rating = input('Your rating must be between 1-5: ')
+
+    scores = {user_restaurant: user_rating}
     for line in data:
         line = line.rstrip()
         words = line.split(":")
@@ -25,17 +31,9 @@ def process_scores(filename):
     # # sorted_scores = sorted(scores)
     # for restaurant in sorted_scores:
     #     print(f"{restaurant} score is {scores[restaurant]}")
-    print(scores.items())
-    print(sorted(scores))
     for res, rating in sorted(scores.items()):
-        print(f"{res}'s rating is {rating}.")
-              
+        print(f"{res}'s is rated at {rating}.")
 
-
-
-print(process_scores('scores.txt'))
-
-print(f"{('lot', 'of', 'sheece',)[1]} llo")
-# print_sorted_scores(score):
+process_scores('scores.txt')
     
     
